@@ -1,5 +1,9 @@
-var express = require('express');
-var path = require('path');
+var express = require('express'),
+    http = require('http'),
+    mongoose = require('mongoose'),
+    baucis = require('baucis'),
+    geojsManager = require('./lib/geojs_manager')(mongoose,baucis),
+    path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -14,6 +18,8 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+app.set('port',process.env.PORT || 3000);
+app.use('/api',baucis());
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
