@@ -14,7 +14,10 @@ var users = require('./routes/users');
 
 var app = express();
 
+
+
 // view engine setup
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
@@ -31,6 +34,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 
+mongoose.connect('mongodb://127.0.0.1:27017/mongoose-rest');
+
+var db = mongoose.connection;
+db.on('error',console.error.bind(console,'connection error: '));
+db.once('open',function(){
+  http.createServer(app).listen(app.get('port'),'127.0.0.1', function(){
+    console.log('GeoJs server listening on port'+app.get('port'));
+  });
+});
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
