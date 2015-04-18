@@ -10,6 +10,7 @@ var express = require('express'),
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var geojs = require('./routes/geojs');
 
 var app = express();
 
@@ -32,6 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/geojs',geojs);
 
 /* app.use('Geo',geojsManager);
 mongoose.connect('mongodb://127.0.0.1:27017/mongoose-rest');
