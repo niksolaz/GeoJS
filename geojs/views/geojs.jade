@@ -2,14 +2,16 @@ extends layout
 
 block content
 	h1 GeoJS
-	p insert your Name
+	form(name="add-estimation", action=/geojs/, method="post")
+		div.input
+			p insert your Name
 
-	input(type="text", placeholder="your #{name}")
+			input(type="text", placeholder="your #{name}")
+		div.input
+			p insert your City
 
-	p insert your City
+			input(type="text", placeholder="your #{city}")
+		div.actions
+			p Press the 'SEND GEO' button to send the data
 
-	input(type="text", placeholder="your #{city}")
-
-	p Press the 'SEND GEO' button to send the data
-
-	input(type="button" value=" SEND GEO ")
+			input(type="submit" value=" SEND GEO ")
