@@ -9,7 +9,7 @@ var locationSchema = mongoose.Schema({
 //Model//
 var Locations = mongoose.model('location',locationSchema)
 
-var cityLocation = new locations({city:'milano'})
+var cityLocation = new Locations({city:'milano'})
 console.log(cityLocation.city)
 
 var db = mongoose.connection;
