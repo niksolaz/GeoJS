@@ -15,23 +15,23 @@ db.once('open',function(callback){
     console.log('Mongodb is connected');
 }); 
 
-module.exports.methods = function(name_city){
+module.exports.create = function(name_city){
     var cityLocation = new Locations({city:name_city})
     console.log(cityLocation.city)
 
     cityLocation.save(function(err,cityLocation){
         if(err) return console.log('The object has been added to the db ...');
     }); 
+}
 
-    cityLocation.find(function(err,cityLocation){
-        if(err) return console.log('The object has been finded to the db...');
-    });
+module.exports.update = function(name_city){
 
-    cityLocation.update(function(err,cityLocation){
-        if(err) return console.log('The object has been updated to the db...');
-    });
+}
 
-    cityLocation.delete(function(err,cityLocation){
-        if(err) return console.log('The object has been deleted to the db...'); 
-    });
+module.exports.find = function(name_city){
+
+}
+
+module.exports.delete = function(name_city){
+
 }

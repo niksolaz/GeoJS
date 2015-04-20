@@ -4,7 +4,7 @@ var LocationModel = require('../models/location');
 
 /* GET GeoJS page */
 router.get('/',function(req,res,next){
-	res.render('geojs', { city: 'city'});
+	res.render('geojs', { city:'city'});
 });
 
 /* POST GeoJs page */
