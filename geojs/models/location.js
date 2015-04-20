@@ -6,17 +6,14 @@ mongoose.connect('mongodb://localhost:27017/mydb');
 var locationSchema = mongoose.Schema({
         city : String
     })
+//Model//
+var Locations = mongoose.model('location',locationSchema)
+
+var cityLocation = new locations({city:'milano'})
+console.log(cityLocation.city)
 
 var db = mongoose.connection;
 db.on('error',console.error.bind(console,'connection error'));
 db.once('open',function(callback){
-    
-    
-    //Model//
-    var Locations = mongoose.model('location',locationSchema)
-
-    var cityLocation = new locations({city:'milano'})
-    console.log(cityLocation.city)
-
-
+    console.log('Mongodb is connected');
 }); 
