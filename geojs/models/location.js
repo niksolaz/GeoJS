@@ -15,8 +15,8 @@ db.once('open',function(callback){
     console.log('Mongodb is connected');
 }); 
 
-module.exports.methods = function(city){
-    var cityLocation = new Locations({city:city})
+module.exports.methods = function(name_city){
+    var cityLocation = new Locations({city:name_city})
     console.log(cityLocation.city)
 
     cityLocation.save(function(err,cityLocation){
@@ -30,7 +30,7 @@ module.exports.methods = function(city){
     cityLocation.update(function(err,cityLocation){
         if(err) return console.log('The object has been updated to the db...');
     });
-    
+
     cityLocation.delete(function(err,cityLocation){
         if(err) return console.log('The object has been deleted to the db...'); 
     });
