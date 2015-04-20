@@ -2,18 +2,21 @@ var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost:27017/mydb');
 
+//schema//
+var locationSchema = mongoose.Schema({
+        city : String
+    })
+
 var db = mongoose.connection;
 db.on('error',console.error.bind(console,'connection error'));
 db.once('open',function(callback){
-    //Schema//
-    var locationSchema = mongoose.Schema({
-        city : String
-    })
+    
+    
     //Model//
-    var locations = mongoose.model('location',locationSchema)
+    var Locations = mongoose.model('location',locationSchema)
 
     var cityLocation = new locations({city:'milano'})
     console.log(cityLocation.city)
 
 
-});
+}); 
