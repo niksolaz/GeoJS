@@ -10,7 +10,7 @@ db.once('open',function(callback){
         city : String
     })
     //Model//
-    var locations = mongoose.model('torino',locationSchema)
+    var locations = mongoose.model('location',locationSchema)
 
     var cityLocation = new locations({city:'milano'})
     console.log(cityLocation.city)
