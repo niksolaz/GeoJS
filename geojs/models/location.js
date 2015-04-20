@@ -16,6 +16,6 @@ db.once('open',function(callback){
 }); 
 
 module.exports.create = function(city){
-    var cityLocation = new Locations({city:'milano'})
+    var cityLocation = new Locations({city:'city'})
     console.log(cityLocation.city)    
 }
