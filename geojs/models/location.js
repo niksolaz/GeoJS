@@ -25,15 +25,24 @@ module.exports.create = function(name_city){
 }
 
 module.exports.update = function(name_city){
-	cityLocation.update({city_id:name_city_id}),{$set: {city:name_city}},callback);
+	db.collection.update({city_id:name_city},{upsert: true})
+	cityLocation.update({city_id:name_city},{$set: {city:name_city}},function(err,cityLocation){
+		if(err) return handleError(err); 
+		console.log('Update'); 
+	});
 }
 
 module.exports.find = function(name_city){
-
+	db.Collection('mydb').find({_id:name_city})
+	cityLocation.findOne({_id:id},function(err,cityLocation){
+		if(err) return handleError(err);
+		console.log('Finded')
+	});
 }
 
 module.exports.delete = function(name_city){
 	cityLocation.remove({_id:'name_city'},function(err){
-		if(err) return handleError(err) console.log('Deleted');
+		if(err) return handleError(err);
+		console.log('Deleted');
 	});
 }
