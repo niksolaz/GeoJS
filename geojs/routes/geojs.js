@@ -10,6 +10,7 @@ router.get('/',function(req,res,next){
 /* POST GeoJs page */
 router.post('/',function(req,res,next){
 	var city = req.body.city;
-	res.send('city');
+	res.send('The city is: '+ req.body.city);
 });
+
 module.exports = router;
