@@ -33,7 +33,7 @@ module.exports.find = function(name_city){
 }
 
 module.exports.delete = function(name_city){
-	cityLocation.remove({city:'name_city'},function(err){
+	cityLocation.remove({_id:'name_city'},function(err){
 		if(err) return handleError(err);
 	});
 }
