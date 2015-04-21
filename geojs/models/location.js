@@ -18,8 +18,8 @@ db.once('open',function(callback){
 module.exports.create = function(name_city){
     var cityLocation = new Locations({city:name_city})
     console.log(cityLocation.city)
-
     cityLocation.save(function(err,cityLocation){
+
         if(!err) return ('The object has been added to the db ...');
     }); 
 }
