@@ -36,7 +36,7 @@ module.exports.find = function(name_city){
 	db.Collection('mydb').find({_id:name_city})
 	cityLocation.findOne({_id:id},function(err,cityLocation){
 		if(err) return handleError(err);
-		console.log('Finded')
+		console.log('Finded');
 	});
 }
 
