@@ -33,7 +33,7 @@ module.exports.find = function(nc){
         console.log(_id);
     }
     var cityLocation = Location({_id:name_city});
-    cityLocation.findOne(findCity);
+    cityLocation.find(findCity);
 }
 
 module.exports.delete = function(nc){	
