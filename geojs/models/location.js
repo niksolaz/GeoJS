@@ -15,7 +15,7 @@ db.once('open',function(callback){
     console.log('Mongodb is connected');
 }); 
 
-module.exports.create = function(nc){
+module.exports.create = function (nc){
     var cityLocation = new Locations({city:nc})
     console.log(cityLocation.city)
     cityLocation.save(function(err,cityLocation){
