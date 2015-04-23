@@ -32,7 +32,7 @@ module.exports.find = function(nc){
     function findCity(_id){
         console.log(_id);
     }
-    var cityLocation = Location({_id:name_city});
+    var cityLocation = Location({_id:nc});
     cityLocation.find(findCity);
 }
 
