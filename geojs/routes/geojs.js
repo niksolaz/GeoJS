@@ -9,9 +9,11 @@ router.get('/',function(req,res,next){
 
 /* POST GeoJs page */
 router.post('/',function(req,res,next){
-	LocationModel.create = req.body.city;
+	LocationModel.create = {city : "*"};
+	LocationModel.city = req.body.city;
 	res.send('City of '+ req.body.city );
 });
 
 
 module.exports = router;
+
