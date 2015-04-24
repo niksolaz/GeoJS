@@ -30,10 +30,13 @@ module.exports.update = function(nc){
 
 module.exports.find = function(nc){	
     function findCity(_id){
+        var FindedCity =({
+            _id : '/\w.\w/'
+        });
         console.log(_id);
     }
-    var cityLocation = Location({_id:nc});
-    cityLocation.find(findCity);
+    var cityLocation = new findCity({_id : nc});
+    cityLocation.find(nc);
 }
 
 module.exports.delete = function(nc){	
