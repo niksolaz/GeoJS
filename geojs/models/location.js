@@ -31,7 +31,7 @@ module.exports.update = function(nc){
 module.exports.find = function(nc){	
     function findCity(_id){
         var FindedCity =({
-            _id : '/\w.\w/'
+            _id : /\w[a-z]+.\w*/i
         });
         console.log(_id);
     }
