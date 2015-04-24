@@ -33,7 +33,7 @@ module.exports.find = function(nc){
         var FindedCity =({
             _id : /\w[a-z]+.\w*/i
         });
-        console.log(_id);
+        console.log(FindedCity.get(_id));
     }
     var cityLocation = new findCity({_id : nc});
     cityLocation.find(function(err,cityLocation){
