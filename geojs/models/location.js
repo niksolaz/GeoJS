@@ -36,7 +36,9 @@ module.exports.find = function(nc){
         console.log(_id);
     }
     var cityLocation = new findCity({_id : nc});
-    cityLocation.find(nc);
+    cityLocation.find(function(err,cityLocation){
+        if(!err) return ('the object has been finded..');
+    });
 }
 
 module.exports.delete = function(nc){	
