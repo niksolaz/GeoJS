@@ -29,7 +29,7 @@ module.exports.update = function(nc){
 
 
 module.exports.find = function(nc){	
-    var id = new location({city})
+    
 }
 
 module.exports.delete = function(nc){	

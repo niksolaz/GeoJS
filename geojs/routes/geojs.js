@@ -10,7 +10,10 @@ router.get('/',function(req,res,next){
 /* GET _id */
 router.get('/city/:name',function(req,res,next){
 	var city = req.params.name;
-	res.send(city);
+	LocationModel.find(name,function(dataDB){
+		res.json(dataDB);
+	});
+	res.send(req.params.name);
 });
 
 router.get('/:version',function(req,res){
