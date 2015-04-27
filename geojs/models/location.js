@@ -29,7 +29,13 @@ module.exports.update = function(nc){
 
 
 module.exports.find = function(nc){	
-    
+    var nameCity ={
+        name : "(\\w+\.\.\w+)"  // REGEX
+        getName : function(){
+            return this.name
+        }
+    }
+    console.log(nameCity.getName());
 }
 
 module.exports.delete = function(nc){	
