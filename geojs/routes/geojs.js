@@ -8,12 +8,12 @@ router.get('/',function(req,res,next){
 });
 
 /* GET _id */
-router.get('/city/:name',function(res,req,next){
+router.get('/city/:name',function(req,res,next){
 	var city = req.params.name;
 	res.send(city);
 });
 
-router.get('/geojs/:version',function(res,req){
+router.get('/geojs/:version',function(req,res){
 	res.send(req.params.version)
 });
 /* POST GeoJs page */
