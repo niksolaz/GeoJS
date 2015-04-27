@@ -13,6 +13,9 @@ router.get('/city/:name',function(res,req,next){
 	res.send(city);
 });
 
+router.get('/geojs/:version',function(res,req){
+	res.send(req.params.version)
+});
 /* POST GeoJs page */
 router.post('/',function(req,res,next){
 	LocationModel.create(req.body.city);
