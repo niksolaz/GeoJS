@@ -7,7 +7,7 @@ var locationSchema = mongoose.Schema({
         city : String
     });
 //Model//
-var Locations = mongoose.model('location',locationSchema);
+var Locations = mongoose.model('locationSchemaKey',locationSchema);
 
 var db = mongoose.connection;
 db.on('error',console.error.bind(console,'connection error'));
@@ -29,7 +29,7 @@ module.exports.update = function(nc){
 
 
 module.exports.find = function(nc){	
-    
+    var id = new location({city})
 }
 
 module.exports.delete = function(nc){	
