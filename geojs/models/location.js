@@ -29,16 +29,7 @@ module.exports.update = function(nc){
 
 
 module.exports.find = function(nc){	
-    function findCity(_id){
-        var FindedCity =({
-            _id : /\w[a-z]+.\w*/i
-        });
-        console.log(FindedCity.get(_id));
-    }
-    var cityLocation = new findCity({_id : nc});
-    cityLocation.find(function(err,cityLocation){
-        if(!err) return ('the object has been finded..');
-    });
+    
 }
 
 module.exports.delete = function(nc){	
