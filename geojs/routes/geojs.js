@@ -8,8 +8,9 @@ router.get('/',function(req,res,next){
 });
 
 /* GET _id */
-router.get('/_id',function(res,req,next){
-	res.send('_id');
+router.get('/city/:name',function(res,req,next){
+	var city = req.params.name;
+	res.send(city);
 });
 
 /* POST GeoJs page */
