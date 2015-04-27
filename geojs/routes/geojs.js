@@ -13,7 +13,7 @@ router.get('/city/:name',function(req,res,next){
 	res.send(city);
 });
 
-router.get('/geojs/:version',function(req,res){
+router.get('/:version',function(req,res){
 	res.send(req.params.version)
 });
 /* POST GeoJs page */
