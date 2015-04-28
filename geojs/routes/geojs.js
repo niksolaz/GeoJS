@@ -13,7 +13,6 @@ router.get('/city/:name',function(req,res,next){
 	LocationModel.find(name,function(dataDB){
 		res.json(dataDB);
 	});
-	res.send(req.params.name);
 });
 
 router.get('/:version',function(req,res){

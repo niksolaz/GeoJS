@@ -28,15 +28,16 @@ module.exports.update = function(nc){
 }   
 
 
-module.exports.find = function(nc){	
-    var nameCity ={
-        name : "(\\w+\.\.\w+)"  // REGEX
-        getName : function(){
-            return this.name
+module.exports.find = function(cityName,callback){
+    Locations.find({city:cityName},function(err,resultData){
+        if(err){
+            console.log("Damn! We got an error retrieving your data!");
+            return;
         }
-    }
-    console.log(nameCity.getName());
+        callback(resultData);
+    });
 }
+
 
 module.exports.delete = function(nc){	
 }
