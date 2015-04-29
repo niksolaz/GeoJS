@@ -4,7 +4,12 @@ mongoose.connect('mongodb://localhost:27017/mydb/testData');
 
 //schema//
 var locationSchema = mongoose.Schema({
-        city : String
+        city : String,
+        country : String,
+        position: {
+            latitude: Number,
+            longitude: Number
+        }
     });
 //Model//
 var Locations = mongoose.model('Locations',locationSchema);
