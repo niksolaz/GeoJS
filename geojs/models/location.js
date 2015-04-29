@@ -7,7 +7,7 @@ var locationSchema = mongoose.Schema({
         city : String
     });
 //Model//
-var Locations = mongoose.model('locationSchemaKey',locationSchema);
+var Locations = mongoose.model('Locations',locationSchema);
 
 var db = mongoose.connection;
 db.on('error',console.error.bind(console,'connection error'));

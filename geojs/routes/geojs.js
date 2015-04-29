@@ -10,7 +10,7 @@ router.get('/',function(req,res,next){
 /* GET _id */
 router.get('/city/:name',function(req,res,next){
 	var city = req.params.name;
-	LocationModel.find(name,function(dataDB){
+	LocationModel.find(city,function(dataDB){
 		res.json(dataDB);
 	});
 });
