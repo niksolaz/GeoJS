@@ -20,9 +20,16 @@ db.once('open',function(callback){
     console.log('Mongodb is connected');
 }); 
 
-module.exports.create = function (newCity){
-    var cityLocation = new Locations({city:newCity})
-    console.log(cityLocation.city)
+module.exports.create = function (newCity,newCountry,newPosX,newPosY){
+    var cityLocation = new Locations({
+                                        city:newCity,
+                                        country:newCountry,
+                                        position:{
+                                            latitude:newPosX,
+                                            longitude:newPosY
+                                        }
+                                    })
+    console.log(cityLocation.city + cityLocation.country+cityLocation.position)
     cityLocation.save(function(err,cityLocation){
 
         if(!err) return ('The object has been added to the db ...');
