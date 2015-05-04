@@ -4,7 +4,14 @@ var LocationModel = require('../models/location');
 
 /* GET GeoJS page */
 router.get('/',function(req,res,next){
-	res.render('geojs', { city:'city'});
+	res.render('geojs', { 
+							city:'city',
+							country:'country',
+							position:{
+								latitude:'position',
+								longitude:'position'
+							}
+						});
 });
 
 /* GET _id */
@@ -20,8 +27,10 @@ router.get('/:version',function(req,res){
 });
 /* POST GeoJs page */
 router.post('/',function(req,res,next){
-	LocationModel.create(req.body.city);
-	res.send('City of '+ req.body.city);
+	LocationModel.create(req.body.city,req.body.country,req.body.position);
+	//LocationModel.create(req.body.country);
+	//LocationModel.create(req.body.position);
+	res.send('City of '+ req.body.city +','+req.body.country+','+req.body.position);
 });
 console.log(LocationModel);
 
