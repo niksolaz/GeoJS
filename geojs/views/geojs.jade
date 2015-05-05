@@ -4,24 +4,24 @@ block content
 	h1 GeoJS
 	form(name="add-estimation", action=/geojs/, method="post")
 		div.input
-			div
+			
 
-				p insert your City
+			p insert your City
 
-				input(type="text", name="#{city}", placeholder="your #{city}")
+			input(type="text", name="#{city}", placeholder="your #{city}")
 
-			div
+			p insert your Country
 
-				p insert your Country
+			input(type="text", name="#{country}", placeholder="your #{country}")
 
-				input(type="text", name="#{country}", placeholder="your #{country}")
+			p Position
 
-			div	
+			input(type="text", name="#{latitude}", placeholder="your #{latitude}")
+			input(type="text", name="#{longitude}", placeholder="your #{longitude}")
 
-				p Position
+			
 
-				input(type="text", name="#{latitude}", placeholder="your #{latitude}")
-				input(type="text", name="#{longitude}", placeholder="your #{longitude}")
+			
 		div.actions
 			p Press the 'SEND GEO' button to send the data
 
