@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+  padding: 100px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -8,13 +8,20 @@ a {
 }
 
 h1 {
-	color: #228B22;
+	font-size: 60px;
+	color: #0E2F44;
 }
 
 p {
 	color: #66CCCC;
+	
 }
 
 input {
-	background-color: #FFFFE0
+	background-color: #FFFFE0;
+}
+
+div {
+	
+	background-color: #0E2F44;
 }
