@@ -29,7 +29,7 @@ module.exports.create = function (newCity,newCountry,newPosX,newPosY){
                                             longitude:newPosY
                                         }
                                     })
-    console.log(cityLocation.city + cityLocation.country+cityLocation.position)
+    console.log(cityLocation.city +' '+ cityLocation.country+' '+cityLocation.latitude+' '+cityLocation.longitude)
     cityLocation.save(function(err,cityLocation){
 
         if(!err) return ('The object has been added to the db ...');
