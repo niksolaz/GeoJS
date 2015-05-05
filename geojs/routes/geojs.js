@@ -27,8 +27,8 @@ router.get('/:version',function(req,res){
 });
 /* POST GeoJs page */
 router.post('/',function(req,res,next){
-	LocationModel.create(req.body.city,req.body.country,req.body.position);
-	res.send('City of '+ req.body.city +','+req.body.country+','+req.body.position);
+	LocationModel.create(req.body.city,req.body.country,req.body.latitude,req.body.longitude);
+	res.send('City of '+ req.body.city +'<br>'+req.body.country+'<br>'+req.body.latitude+' - '+req.body.longitude);
 });
 console.log(LocationModel);
 
