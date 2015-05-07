@@ -32,5 +32,10 @@ router.post('/',function(req,res,next){
 });
 console.log(LocationModel);
 
+router.put('/',function(req,res){
+	var NewCity = req.body.city; 
+	LocationModel.update();
+});
+
 module.exports = router;
 
