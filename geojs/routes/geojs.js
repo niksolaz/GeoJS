@@ -8,8 +8,8 @@ router.get('/',function(req,res,next){
 							city:'city',
 							country:'country',
 							position:{
-								latitude:'position',
-								longitude:'position'
+								latitude:'latitude',
+								longitude:'longitude'
 							}
 						});
 });
@@ -28,14 +28,14 @@ router.get('/:version',function(req,res){
 /* POST GeoJs page */
 router.post('/',function(req,res,next){
 	LocationModel.create(req.body.city,req.body.country,req.body.latitude,req.body.longitude);
-	res.send('City of '+ req.body.city +'<br>'+req.body.country+'<br>'+req.body.latitude+' - '+req.body.longitude);
+	'/?'res.send('City of '+ req.body.city +'<br>'+req.body.country+'<br>'+req.body.latitude+' - '+req.body.longitude);
 });
 console.log(LocationModel);
 
-router.put('/',function(req,res){
+/*router.put('/',function(req,res){
 	var NewCity = req.body.city; 
 	LocationModel.update();
-});
+});*/
 
 module.exports = router;
 

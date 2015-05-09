@@ -37,13 +37,13 @@ module.exports.create = function (newCity,newCountry,newPosX,newPosY){
 }
 
 module.exports.update = function(cityUpdate,callback){
-    Locations.findOneAndUpdate({city:cityUpdate},{upsert: true},function(err,resultData){
+   /* Locations.findOneAndUpdate({city:cityUpdate},{upsert: true},function(err,resultData){
         if(err){
             console.log("Update succesful!"),
             return;
         }
         callback(resultData);
-    });	
+    });	*/
 }   
 
 
