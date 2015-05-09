@@ -28,7 +28,8 @@ router.get('/:version',function(req,res){
 /* POST GeoJs page */
 router.post('/',function(req,res,next){
 	LocationModel.create(req.body.city,req.body.country,req.body.latitude,req.body.longitude);
-	'/?'res.send('City of '+ req.body.city +'<br>'+req.body.country+'<br>'+req.body.latitude+' - '+req.body.longitude);
+	//res.send('City of '+ req.body.city +'<br>'+req.body.country+'<br>'+req.body.latitude+' - '+req.body.longitude);
+	req.send(JSON.stringify(req.body))
 });
 console.log(LocationModel);
 
